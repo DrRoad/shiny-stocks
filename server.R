@@ -1,5 +1,5 @@
 library(shiny)
-library(quantmod)
+suppressMessages(library(quantmod))
 
 getSymbols(c("GOOG", "AAPL", "MSFT"))
 
@@ -19,11 +19,11 @@ shinyServer(function(input, output) {
 		if(length(input$indicators) == 0)
 			candleChart(stockData, subset='2014-07::', TA=c(addVo())) 
 		else if("bb" %in% input$indicators && "ma" %in% input$indicators)
-			candleChart(stockData, subset='2014-07::', TA=c(addVo(), addBBands(n = 5), addSMA(col = "white")))
+			candleChart(stockData, subset='2014-07::', TA=c(addVo(), addBBands(n = 5), addSMA(col = "white", n = 10)))
 		else if("bb" %in% input$indicators)
 			candleChart(stockData, subset='2014-07::', TA=c(addVo(), addBBands(n = 5)))
 		else if("ma" %in% input$indicators)
-			candleChart(stockData, subset='2014-07::', TA=c(addVo(), addSMA(col = "white")))
+			candleChart(stockData, subset='2014-07::', TA=c(addVo(), addSMA(col = "white", n = 10)))
 	})
 	
 	output$lastDividend <- renderText({

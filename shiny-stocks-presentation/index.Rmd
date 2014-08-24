@@ -1,0 +1,49 @@
+---
+title       : Shiny stocks presentation
+subtitle    : An app that displays informations about the stock market
+author      : Mickael Burguet
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [bootstrap]            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+logo        : logo.jpg
+---
+
+## Presentation
+
+### App description
+- The "Shiny stocks" app will allow you to choose a stock market symbol, and it will then displays the stock's price evolution graph, along with the last dividend of the stock.
+You will also be able to choose technical indicators to show on the graph. (More about this on the 5th slide)
+
+### You can access the app at this URL: 
+- *http://und1f.shinyapps.io/shiny-stocks/*
+
+### All the source code is available on github
+- You can clone the repository wih the following command:
+
+```
+git clone https://github.com/und1f/shiny-stocks
+```
+
+--- .class #id 
+
+## R Library: quantmod
+
+1. TODO
+
+--- .class #id 
+
+
+## Datasets presentation
+
+1. getSymbols("GOOG"), head(GOOG))
+
+--- .class #id 
+
+
+## Technical indicators presentation
+
+1. TODO
+
