@@ -31,19 +31,40 @@ git clone https://github.com/und1f/shiny-stocks
 
 ## R Library: quantmod
 
-1. TODO
+- The app uses a package called quantmod.
+
+- This package is a quantitative financial modelling and trading framework.
+
+- It is used to draw the stocks price graph and to get the last given dividend.
+
+- quantmod can also be used to develop, test and deploy statistically based trading models.
+
 
 --- .class #id 
 
 
-## Datasets presentation
+## Dataset presentation
 
-1. getSymbols("GOOG"), head(GOOG))
+- The price evolution dataset looks like this :
+
+```{r}
+suppressMessages(library(quantmod))
+tmp = getSymbols("GOOG")
+head(GOOG, n=4)
+```
 
 --- .class #id 
 
 
-## Technical indicators presentation
+## Technical indicators: definition
 
-1. TODO
+### A technical indicator is a result of mathematical calculations based on indications of price and/or volume. The values obtained are used to forecast probable price changes. There are many technical indicators already developed. The two indicators used in the app are described below.
+
+<strong>Moving Average</strong>
+
+- A moving average is a calculation to analyze data points by creating a series of averages of different subsets of the full data set. The app uses a 10 days moving average.
+
+<strong>Bollinger Bands</strong>
+
+- A band plotted two standard deviations away from a simple moving average. In this app, the price of the stock is banded by an upper and lower band along with a 5-day moving average.
 
